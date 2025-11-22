@@ -1,14 +1,25 @@
-import "./Carousel.css"
+import "./Carousel.css";
+import Ansible from "../../assets/ansible.png";
+import Docker from "../../assets/docker.png";
+import K8s from "../../assets/k8s.png";
+import Java from "../../assets/java.png"; 
+import React from "../../assets/react.svg";
+import Terraform from "../../assets/terraform.png";
+import Prometheus from "../../assets/prometheus_logo.png";
+import Grafana from"../../assets/grafana.png";
+import Gitlab from"../../assets/gitlab.png";
 
 const techStack = [
-    { src: "/src/assets/ansible.png", alt: "Ansible" },
-    { src: "/src/assets/docker.png", alt: "Docker" },
-    { src: "/src/assets/k8s.png", alt: "Kubernetes"},
-    { src: "/src/assets/terraform.png", alt: "Terraform" },
-    { src: "/src/assets/prometheus_logo.png", alt: "Prometheus" },
-    { src: "/src/assets/grafana.png", alt: "Grafana" },
-    { src: "/src/assets/gitlab.png", alt: "GitLab CI/CD" },
-    { src: "/src/assets/java.png", alt: "Java" },
+    { src: Ansible, alt: "Ansible" },
+    { src: Docker, alt: "Docker" },
+    { src: K8s, alt: "Kubernetes"},
+    { src: Terraform, alt: "Terraform" },
+    { src: Java, alt: "Java" },
+    { src: React, alt: "React" },
+    { src: Prometheus, alt: "Prometheus" },
+    { src: Grafana, alt: "Grafana" },
+    { src: Gitlab, alt: "GitLab CI/CD" },
+
 
 ];
 
