@@ -4,6 +4,7 @@ import Info_Card from "./components/Info_Card/Info_Card";
 import Carousel from "./components/Tech_Carousel/Carousel";
 import Loading from "./components/Loading/Loading";
 import Devops from "./components/Devops_card/Devops";
+import Backend from "./components/Backend_card/Backend";
 import "./App.css";
 
 
@@ -17,7 +18,7 @@ function App() {
       <div style={{ display: "flex", alignItems: "center" }}>
         <Devops />
         <div className="vertical-divider" />
-        <Devops />
+        <Backend />
       </div>
 
       

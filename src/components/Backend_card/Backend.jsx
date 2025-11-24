@@ -1,8 +1,8 @@
-import './Devops.css';
-import DevOpsImage from '../../assets/devops.png';
+import './Backend.css';
+import Software from '../../assets/software.png';
 import { useEffect, useRef } from 'react';
 
-export default function Devops({ count = 50 }) {
+export default function Backend({ count = 50 }) {
   const cardRef = useRef(null);
   const particlesRef = useRef(null);
   const createdNodesRef = useRef([]);
@@ -28,7 +28,7 @@ export default function Devops({ count = 50 }) {
         el.style.left = `${Math.random() * 100}%`;
         const size = 3 + Math.random() * 2;
         el.style.width = el.style.height = `${size}px`;
-        el.style.background = `rgba(0,170,255,${0.35 + Math.random() * 0.6})`;
+        el.style.background = `rgba(255,0,0,${0.35 + Math.random() * 0.8})`;
         el.style.animationDuration = `${5 + Math.random() * 3}s`;
         el.style.animationDelay = `${-Math.random() * 5}s`;
         container.appendChild(el);
@@ -56,12 +56,12 @@ export default function Devops({ count = 50 }) {
   }, [count]);
 
   return (
-    <div ref={cardRef} className="devops-card">
+    <div ref={cardRef} className="backend-card">
       <div ref={particlesRef} className="particles" aria-hidden="true" />
-      <div className="devops-title">DevOps</div>
+      <div className="backend-title">Backend</div>
       <div
         style={{
-          backgroundImage: `url(${DevOpsImage})`,
+          backgroundImage: `url(${Software})`,
           width: '100px',
           height: '100px',
           backgroundSize: 'contain',
