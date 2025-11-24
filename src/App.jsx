@@ -13,13 +13,14 @@ function App() {
       <Avatar src={portrait} alt="My portrait" size={{width: 800, height: 400 }} />
       <Info_Card />
       <Carousel />
+      <Loading />
       <div style={{ display: "flex", alignItems: "center" }}>
         <Devops />
         <div className="vertical-divider" />
         <Devops />
       </div>
 
-      <Loading />
+      
     </div>
   );
 }
