@@ -15,7 +15,7 @@ function App() {
       <Info_Card />
       <Carousel />
       <Loading />
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", alignItems: "center" , maxWidth: "80%" }}>
         <Devops />
         <div className="vertical-divider" />
         <Backend />

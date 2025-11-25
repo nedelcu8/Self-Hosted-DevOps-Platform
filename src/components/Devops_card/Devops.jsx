@@ -1,11 +1,18 @@
 import './Devops.css';
 import DevOpsImage from '../../assets/devops.png';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Modal } from '@mui/material';
+import ProjectCard from '../Project_Card/ProjectCard';
+import TerraormProj from '../../assets/terraform-proj.png';
+import K8sProj from '../../assets/k8s-proj.svg';
+import AnsibleProj from '../../assets/ansible-proj.svg';
+
 
 export default function Devops({ count = 50 }) {
   const cardRef = useRef(null);
   const particlesRef = useRef(null);
   const createdNodesRef = useRef([]);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const card = cardRef.current;
@@ -56,7 +63,7 @@ export default function Devops({ count = 50 }) {
   }, [count]);
 
   return (
-    <div ref={cardRef} className="devops-card">
+    <div ref={cardRef} className="devops-card" onClick={() => setIsVisible(true)}>
       <div ref={particlesRef} className="particles" aria-hidden="true" />
       <div className="devops-title">DevOps</div>
       <div
@@ -69,6 +76,38 @@ export default function Devops({ count = 50 }) {
           marginBottom: '10px',
         }}
       />
+      <Modal open={isVisible} 
+      onClose={() => setIsVisible(false)}
+      onRequestClose={() => setIsVisible(false)}
+      className="devops-modal"
+      >
+
+
+        <div className="modal-content">
+          <button onClick={(e) => { e.stopPropagation(); setIsVisible(false); }}
+            className='modal-button'
+            >
+            Close
+          </button>
+          <h2 >DevOps Projects ♾️</h2>
+          <ProjectCard 
+            title="Automated VM creation with Terraform on Proxmox"
+            description="A project that automates the creation of virtual machines on Proxmox using Terraform. It includes configurations to streamline VM deployment, scaling, and maintenance."  
+            imageSrc={TerraormProj}
+          />
+          <ProjectCard
+            title="Gitlab runners inside k8s cluster"
+            description="GitLab-runners helm chart deployed on k8s cluster with auto-scaling  capabilities based on workload demands."  
+            imageSrc={K8sProj}
+          />
+          <ProjectCard
+            title="Ansbiel configurations for server management"
+            description="Terraform creation installed ansible ssh key and from there ansible configres each VM with users and packages."  
+            imageSrc={AnsibleProj}
+          />
+          
+        </div>
+      </Modal>
     </div>
   );
 }
